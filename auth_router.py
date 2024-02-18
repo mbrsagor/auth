@@ -13,8 +13,8 @@ router = APIRouter(
 )
 
 
-@router.post('/create-user/', status_code=status.HTTP_201_CREATED, response_model=UserOut)
-def create_user(user: CreteUser, db: Session = Depends(get_db)):
+@router.post('/signup/', status_code=status.HTTP_201_CREATED, response_model=UserOut)
+def signup_api(user: CreteUser, db: Session = Depends(get_db)):
     """
     Create new user with Has password
     :param user:
@@ -38,8 +38,8 @@ def create_user(user: CreteUser, db: Session = Depends(get_db)):
     return new_user
 
 
-@router.post('/signin')
-async def signin(user_credentials: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+@router.post('/signin/')
+async def signin_api(user_credentials: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     """
     User signIN with access token and validate credentials
     :param user_credentials:
