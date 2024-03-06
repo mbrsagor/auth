@@ -21,4 +21,5 @@ pip install -r requirements.txt
 ### Features:
 - User signUp with
 - User SignIn with JWT
+- User profile
 - Update user profile
